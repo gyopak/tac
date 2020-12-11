@@ -1,38 +1,156 @@
 .App {
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  transition: background-color 1s ease;
+  display: grid;
+  overflow: hidden;
+   place-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Size {
+  margin: 5% 20%;
+  width: 60%;
+  position: fixed;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Row {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+
+.Knob {
+  width: 5px;
+  height: 5px;
+}
+
+.Wall {
+  background: white;
+  border-radius: 2.5rem;
+  transition: background-color 0.5s ease;
+}
+
+.Wall[data-selected=true] {
+  background: red;
+}
+
+.Wall[data-selected=false]:hover {
+  background: red;
+}
+
+.Wall[data-selected=false] {
+  background: white;
+}
+
+
+
+.Wall.Vertical {
+  width: 5px;
+  height: 2.5rem;
+}
+
+.Wall.Horizontal {
+  width: 2.5rem;
+  height: 5px;
+}
+
+.Col {
+  width: 2rem;
+  height: 2rem;
+  margin: 0.25rem;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  font-size: 25px;
+  border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.Col:hover {
+  background: rgba(0, 0, 0, 0.31);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Col[data-selected=true] {
+  background: rgba(0, 0, 0, 0.31);
+}
+
+
+
+
+input[type=range] {
+  -webkit-appearance: none;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  animate: 0.2s;
+  border-radius: 0;
+  border: 0px solid black;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0.6105px 3px 5px 0px rgba(0, 0, 0, 0.31);
+  border: 6px solid #000000;
+  height: 24px;
+  width: 24px;
+  border-radius: 24px;
+  background: #fff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -10px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: #f06e32;
+  border-radius: 0;
+  border: 0px solid black;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0.6105px 3px 5px 0px rgba(0, 0, 0, 0.31);
+  border: 6px solid #f06e32;
+  height: 24px;
+  width: 24px;
+  border-radius: 24px;
+  background: #fff;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  border-width: 24px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #ee5d1a;
+  border: 0px solid black;
+  border-radius: 0;
+}
+input[type=range]::-ms-fill-upper {
+  background: #f06e32;
+  border: 0px solid black;
+  border-radius: 0;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 0.6105px 3px 5px 0px rgba(0, 0, 0, 0.31);
+  border: 6px solid #f06e32;
+  height: 24px;
+  width: 24px;
+  border-radius: 24px;
+  background: #fff;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #f06e32;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #f210f4a;
 }
