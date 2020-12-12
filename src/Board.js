@@ -3,12 +3,12 @@ import Wall from './Wall';
 
 const renderCol = (i, j) => {
   console.log(i, j, i + j);
-  const isHorizontalWall = i % 2 == 0;
-  const isVericalWall = j % 2 == 0;
+  const isHorizontalWall = i % 2===0;
+  const isVericalWall = j % 2===0;
   const isWall = isHorizontalWall || isVericalWall;
   const isKnob = isHorizontalWall && isVericalWall;
 
-  if (i == 0 || j == 0) return null;
+  if (i===0 || j===0) return null;
 
   if (isKnob)
     return (

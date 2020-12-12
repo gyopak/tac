@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function Wall({ i, j }) {
   const [selected, setSelected] = useState(false);
-  const isVericalWall = j % 2 == 0;
+  const isVericalWall = j % 2===0;
   return (
     <div
       className={`Wall ${(isVericalWall && "Vertical") || "Horizontal"}`}
